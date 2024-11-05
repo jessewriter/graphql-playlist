@@ -22,6 +22,7 @@ you may need to install nodemon globally
 you will need to verify in the terminal "connected to database" 
 if error you may need to verify your uri in express-server.js to match your atlas db
 * server includes GraphiQL at http://localhost:4000/graphql which is a helpful gui to test your queries and display available root types (models for query)
+* you will need to populate the db with at least one author and one book with exactly the same types as your models
 
 Front-End React Demo - Books and Authors query and mutations
 to start => inside modernClient folder terminal : "yarn dev" or "npm run dev"
