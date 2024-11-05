@@ -3,15 +3,12 @@ import { getBookQuery } from '../queries/queries'
 import { useQuery } from '@tanstack/react-query'
 
 export const BookDetails = ({ bookId }) => {
-    console.log('bookId', bookId)
 
     const bookQuery = useQuery({
         queryKey: ['book', bookId],
         queryFn: async () => request('http://localhost:4000/graphql', getBookQuery, { id: bookId }),
         enabled: !!bookId
     })
-
-    console.log('bookQuery.data', bookQuery.data)
 
     const displayBookDetails = () => {
         if (bookQuery.data?.book) {
@@ -40,12 +37,3 @@ export const BookDetails = ({ bookId }) => {
     )
 }
 
-// export default gql(getBookQuery, {
-//     options: (props) => {
-//         return {
-//             variables: {
-//                 id: props.bookId
-//             }
-//         }
-//     }
-// })(BookDetails)
